@@ -10,15 +10,10 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output", "name" ]
-
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
-  }
+  static targets = [ "name", "output" ]
 
   greet() {
-    const element = this.nameTarget
-    const name = element.value
-    console.log(`Hello, ${name}!`)
+    this.outputTarget.textContent =
+      `Hello, ${this.nameTarget.value}!`
   }
 }
